@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width initial-scale=1.0" />
         <title>Egg Timer</title>
-        <link rel="stylesheet" href="./done.css" />
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <audio id="click-sound" src="./assets/sounds/click.mp3" preload="auto"></audio>
@@ -16,7 +16,7 @@
         </div>
         <div class="content-container">
             <img src="./assets/background.png" alt="background" class="background-img" />
-            <h1 class="line">Your egg is done!!</h1>
+            <h1 class="linel">Your egg is done!!</h1>
             <div class="egg-animation">
                 <img src="./assets/yolk1.png" alt="egg" />
                 <img src="./assets/yolk2.png" alt="egg" />
@@ -31,40 +31,50 @@
             </div>
         </div>
         <script>
-            const { ipcRenderer } = require('electron');
+          const { ipcRenderer } = require('electron'); // Omit if not using Electron
 
-            const clickSound = document.getElementById('click-sound');
-            const dingSound = document.getElementById('ding-sound');
+const clickSound = document.getElementById('click-sound');
+const dingSound = document.getElementById('ding-sound');
 
-            function playClickSound() {
-                clickSound.currentTime = 0;
-                clickSound.play();
-            }
+function playClickSound() {
+    if (clickSound) {
+        clickSound.currentTime = 0;
+        clickSound.play();
+    }
+}
 
-            function playDingSound() {
-                dingSound.currentTime = 0;
-                dingSound.play();
-            }
+function playDingSound() {
+    if (dingSound) {
+        dingSound.currentTime = 0;
+        dingSound.play();
+    }
+}
 
-            document.getElementById('close-button').addEventListener('click', () => {
-                playClickSound();
-                ipcRenderer.send('go-to-start-page', 180);
-            });
+// Play ding sound when page loads
+window.addEventListener('DOMContentLoaded', () => {
+    playDingSound();
+});
 
-            document.getElementById('snooze-button').addEventListener('click', () => {
-                playClickSound();
-                ipcRenderer.send('go-to-timer-page', 60);
-            });
+// Button event listeners
+document.getElementById('close-icon')?.addEventListener('click', () => {
+    playClickSound();
+    ipcRenderer.send('close-app'); // Adjust if not using Electron
+});
 
-            document.getElementById('close-icon').addEventListener('click', () => {
-                playClickSound();
-                ipcRenderer.send('close-app');
-            });
+document.getElementById('minimise-icon')?.addEventListener('click', () => {
+    playClickSound();
+    ipcRenderer.send('minimise-window'); // Adjust if not using Electron
+});
 
-            document.getElementById('minimise-icon').addEventListener('click', () => {
-                playClickSound();
-                ipcRenderer.send('minimise-window');
-            });
+document.getElementById('snooze-button')?.addEventListener('click', () => {
+    playClickSound();
+    ipcRenderer.send('go-to-timer-page', 60); // Adjust navigation logic
+});
+
+document.getElementById('close-button')?.addEventListener('click', () => {
+    playClickSound();
+    ipcRenderer.send('go-to-start-page'); // Remove 180 if not needed
+});
         </script>
     </body>
 </html>

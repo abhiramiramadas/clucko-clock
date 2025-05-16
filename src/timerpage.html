@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width initial-scale=1.0" />
         <title>Egg Timer</title>
-        <link rel="stylesheet" href="timer.css" />
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <audio id="click-sound" src="./assets/sounds/click.mp3" preload="auto"></audio>
@@ -16,7 +16,7 @@
         </div>
         <div class="content-container">
             <img src="./assets/background.png" alt="background" class="background-img" />
-            <h1 class="line">Your egg is ready in...</h1>
+            <h1 class="lined">Your egg is ready in...</h1>
             <div class="chick-animation">
                 <img src="./assets/open-egg0.png" alt="egg" />
                 <img src="./assets/open-egg1.png" alt="egg" />
@@ -28,56 +28,58 @@
             </div>
             <div id="timer-display">00:00</div>
         </div>
-        <script>
-            const { ipcRenderer } = require('electron');
 
-            const clickSound = document.getElementById('click-sound');
-            const dingSound = document.getElementById('ding-sound');
+    <script>
+        const { ipcRenderer } = require('electron');
 
-            function playClickSound() {
-                clickSound.currentTime = 0;
-                clickSound.play();
-            }
+const clickSound = document.getElementById('click-sound');
+const dingSound = document.getElementById('ding-sound');
 
-            function playDingSound() {
-                dingSound.currentTime = 0;
-                dingSound.play();
-            }
+function playClickSound() {
+    if (clickSound) {
+        clickSound.currentTime = 0;
+        clickSound.play();
+    }
+}
 
-            ipcRenderer.on('start-timer', (event, durationInSeconds) => {
-                startTimer(durationInSeconds);
-            });
+function playDingSound() {
+    if (dingSound) {
+        dingSound.currentTime = 0;
+        dingSound.play();
+    }
+}
 
-            function startTimer(durationInSeconds) {
-                const timerDisplay = document.getElementById('timer-display');
-                let remainingTime = durationInSeconds;
+// Close button
+document.getElementById('close-icon')?.addEventListener('click', () => {
+    playClickSound();
+    ipcRenderer.send('close-app');
+});
 
-                const interval = setInterval(() => {
-                    const minutes = Math.floor(remainingTime / 60);
-                    const seconds = remainingTime % 60;
+// Minimize button
+document.getElementById('minimise-icon')?.addEventListener('click', () => {
+    playClickSound();
+    ipcRenderer.send('minimise-window');
+});
 
-                    // Update the timer display
-                    timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+// Timer logic
+ipcRenderer.on('start-timer', (event, durationInSeconds) => {
+    const timerDisplay = document.getElementById('timer-display');
+    let timeLeft = durationInSeconds;
 
-                    if (remainingTime <= 0) {
-                        clearInterval(interval);
-                        playDingSound();
-                        ipcRenderer.send('go-to-ending-page');
-                    }
+    const countdown = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        timeLeft--;
 
-                    remainingTime--;
-                }, 1000);
-            }
+        if (timeLeft < 0) {
+            clearInterval(countdown);
+            playDingSound(); // Play ding when timer completes
+            ipcRenderer.send('go-to-ending-page'); // Navigate to ending page
+        }
+    }, 1000);
+});
 
-            document.getElementById('close-icon').addEventListener('click', () => {
-                playClickSound();
-                ipcRenderer.send('close-app');
-            });
-
-            document.getElementById('minimise-icon').addEventListener('click', () => {
-                playClickSound();
-                ipcRenderer.send('minimise-window');
-            });
-        </script>
+</script>
     </body>
 </html>

@@ -1,147 +1,395 @@
-@font-face {
-  font-family: 'Pixelify Sans';
-  src: url('assets/fonts/PixelifySans-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
+/* Base Body Styles */
 body {
-  font-family: 'Pixelify Sans', sans-serif;
-  background-color: #FFE979;
-  text-align: center;
-  margin: 0;
+    background-color: #FFE979;
+    width: 420px;
+    height: 500px;
+    border: 5px solid #F8BA03;
+    position: relative;
+    overflow: hidden;
 }
 
-.frame {
-  display: inline-flex;
-  padding: 14px 34px 38px 23px;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 20px;
-  border: 1px solid #F8BA03;
-  background: #FFE979;
-}
-
+/* Header Container (Used in all pages) */
 .header-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
+    position: absolute;
+    top: 15px;
+    left: 26px;
+    width: 368px;
+    height: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#cluck-text {
-  width: 242px;
-  height: 28px;
-  flex-shrink: 0;
-  color: #F47730;
-  font-family: 'Pixelify Sans';
-  font-size: 35px;
-  font-weight: 400;
-  margin: 0;
+.title {
+    font-size: 26px;
+    line-height: 31px;
+    color: #F47730;
 }
 
-.header-spacer {
-  width: 255px; /* Enforces 255px gap */
-  flex-shrink: 0;
+/* Minimize and Close Icons (Consistent across all pages) */
+#minimise-icon,
+#close-icon {
+    position: absolute;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.shrink-close-icons {
-  display: flex;
-  gap: 5px;
+#minimise-icon {
+    right: 40px;
 }
 
-.shrink-icon, .close-icon {
-  width: 96px;
-  height: 38px;
-  flex-shrink: 0;
-  cursor: pointer;
+#close-icon {
+    right: 3px;
 }
 
-#main-content {
-  width: 580px;
-  height: 586px;
-  border: 5px solid #F8BA03;
-  background: url('assets/bg.png') no-repeat center;
-  background-size: cover;
+#minimise-icon img,
+#close-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
-#eggie-text {
-  width: 235px;
-  height: 92px;
-  flex-shrink: 0;
-  color: #000;
-  font-family: 'Pixelify Sans';
-  font-size: 42px;
-  font-weight: 400;
-  margin: 10px auto;
+/* Main Content Area (Used in all pages) */
+.content-container {
+    position: absolute;
+    top: 60px;
+    left: 26px;
+    width: 368px;
+    height: 411px;
+    border: 5px solid #F8BA03;
+    overflow: hidden;
+}
+
+/* Background Image (Used in startpage, menu, done) */
+.background-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Start Page Specific Styles */
+.tagline {
+    position: absolute;
+    width: 157px;
+    height: 58px;
+    left: 102px;
+    top: 135px;
+    font-size: 28px;
+    color: #000;
+    text-align: center;
 }
 
 #start-button {
-  background: url('assets/startbutton.png') no-repeat center;
-  background-size: contain;
-  width: 100px;
-  height: 50px;
-  border: none;
-  cursor: pointer;
+    position: absolute;
+    width: 73px;
+    height: 31px;
+    left: 151px;
+    top: 229px;
+    background: #FFE274;
+    border: 3px solid #F8BA03;
+    font-size: 17px;
+    line-height: 20px;
+    color: #000;
+    font-family: 'Pixelify Sans', sans-serif;
+    cursor: pointer;
 }
 
-#eggactly-text {
-  width: 180px;
-  height: 33px;
-  flex-shrink: 0;
-  color: #FD762A;
-  font-family: 'Pixelify Sans';
-  font-size: 22px;
-  font-weight: 400;
-  margin: 10px auto;
+.slogan {
+    position: absolute;
+    width: 142px;
+    height: 17px;
+    left: 119px;
+    top: 276px;
+    font-size: 16px;
+    color: #FD762A;
 }
 
-button {
-  margin: 10px;
-  padding: 10px;
-  background-color: #FD762A;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
+/* Menu Page Specific Styles */
+
+
+.eggs-container {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 20px;
 }
 
-#menu-button-soft {
-  background: url('assets/softboiled.png') no-repeat center;
-  background-size: contain;
-  width: 80px;
-  height: 80px;
+.egg-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 121px;
 }
 
-#menu-button-hard {
-  background: url('assets/hardboiled.png') no-repeat center;
-  background-size: contain;
-  width: 80px;
-  height: 80px;
+.egg-item button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
 }
 
-#menu-button-scrambled {
-  background: url('assets/scrambled.png') no-repeat center;
-  background-size: contain;
-  width: 80px;
-  height: 80px;
+.egg-item img {
+    width: 121px;
+    height: 121px;
 }
 
-#menu-button-fried {
-  background: url('assets/friedegg.png') no-repeat center;
-  background-size: contain;
-  width: 80px;
-  height: 80px;
+
+.egg-item button img {
+    display: block;
+    transition: transform 0.2s ease;
 }
 
-#timer {
-  font-size: 24px;
-  margin: 20px;
+.egg-item button:hover img {
+    transform: translateY(-6px);
 }
 
-#egg-image {
-  width: 100px;
-  height: 100px;
-  margin: 20px auto;
+.egg-item button:focus {
+    outline: none;
+}
+
+
+.egg-item h1 {
+    font-size: 20px;
+    line-height: 24px;
+    color: #000;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Timer Page Specific Styles */
+.timer-content {
+    background-color: #fff;
+}
+
+
+.chick-animation {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 250px;
+    z-index: 5;
+}
+
+.chick-animation img {
+    position: absolute;
+    object-fit: contain;
+    opacity: 0;
+    animation-name: chick-rotate;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes chick-rotate {
+    0%, 8%    { opacity: 0; }
+    12%, 25%  { opacity: 1; }
+    30%, 100% { opacity: 0; }
+}
+
+.chick-animation img:nth-child(1) {
+    animation-delay: 0s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+    opacity: 1;
+}
+.chick-animation img:nth-child(2) {
+    animation-delay: 1s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+.chick-animation img:nth-child(3) {
+    animation-delay: 2s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+.chick-animation img:nth-child(4) {
+    animation-delay: 3s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+.chick-animation img:nth-child(5) {
+    animation-delay: 4s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+.chick-animation img:nth-child(6) {
+    animation-delay: 5s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+.chick-animation img:nth-child(7) {
+    animation-delay: 6s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+
+#timer-display {
+    position: absolute;
+    bottom: 6%;
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+    line-height: 96px;
+    color: #512B22;
+    z-index: 2;
+}
+
+#pause-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFE274;
+    border: 3px solid #F8BA03;
+    font-size: 17px;
+    color: #000;
+    font-family: 'Pixelify Sans', sans-serif;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Done Page (endingpage) Specific Styles */
+
+.egg-animation {
+    position: absolute;
+    top: 16px;
+    left: 57px;
+    width: 255px;
+    height: 255px;
+}
+
+.egg-animation img {
+    position: absolute;
+    width: 255px;
+    height: 255px;
+    object-fit: contain;
+    opacity: 0;
+    animation-name: egg-rotate;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.egg-animation img:nth-child(1) {
+    animation-delay: 0s;
+    opacity: 1;
+}
+.egg-animation img:nth-child(2) {
+    animation-delay: 1s;
+}
+.egg-animation img:nth-child(3) {
+    animation-delay: 2s;
+}
+.egg-animation img:nth-child(4) {
+    animation-delay: 3s;
+}
+.egg-animation img:nth-child(5) {
+    animation-delay: 4s;
+}
+.egg-animation img:nth-child(6) {
+    animation-delay: 5s;
+}
+
+@keyframes egg-rotate {
+    0% {
+        opacity: 1;
+    }
+    16% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.button-container {
+    position: absolute;
+    top: 310px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 56px;
+}
+
+#snooze-button,
+#close-button {
+    width: 118px;
+    height: 36px;
+    background: #FFE274;
+    border: 5px solid #F8BA03;
+    font-size: 21px;
+    line-height: 25px;
+    color: #000;
+    cursor: pointer;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+
+/* Prompt text */
+.liner {
+  position: absolute;
+  top: 28px;
+  left: 35px;
+  font-size: 21px;
+  color: #000;
+}
+
+
+/* "Your egg is ready in..." text */
+.lined {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 21px;
+  color: #000;
+  z-index: 2;
+}
+
+
+/* Message */
+.linel {
+  position: absolute;
+  top: 260px;
+  left: 60px;
+  font-size: 29px;
+  line-height: 35px;
+  color: #512B22;
 }
