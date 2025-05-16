@@ -49,8 +49,8 @@ Installation
 1.  **Clone the Repository** (or download the ZIP file):
 
     ```
-    git clone https://github.com/yourusername/cluck-o-clock.git
-    cd cluck-o-clock
+    git clone https://github.com/abhiramiramadas/clucko-clock.git
+    cd clucko-clock
 
     ```
 
