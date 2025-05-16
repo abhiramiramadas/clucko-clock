@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Pixelify Sans', sans-serif;
+  background: #FFE979;
+  border: 5px solid #F8BA03;
+  width: 420px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-container {
+  position: absolute;
+  width: 371px;
+  height: 28px;
+  left: 26px;
+  top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  font-size: 26px;
+  line-height: 31px;
+  color: #F47730;
+}
+
+#minimise-icon, #close-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#minimise-icon {
+  left: 310px;
+  top: 0;
+}
+
+#close-icon {
+  left: 342px;
+  top: 0;
+}
+
+.content-container {
+  position: absolute;
+  width: 368px;
+  height: 411px;
+  left: 26px;
+  top: 60px;
+
+  border: 5px solid #F8BA03;
+
+}
+
+.background-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.tagline {
+  position: absolute;
+  width: 157px;
+  height: 58px;
+  left: 102px;
+  top: 135px;
+  font-size: 28px;
+
+  color: #000;
+  text-align: center;
+}
+
+#start-button {
+  position: absolute;
+  width: 73px;
+  height: 31px;
+  left: 151px;
+  top: 229px;
+  background: #FFE274;
+  border: 3px solid #F8BA03;
+  font-size: 17px;
+  line-height: 20px;
+  color: #000;
+  font-family: 'Pixelify Sans', sans-serif;
+  cursor: pointer;
+}
+
+.slogan {
+  position: absolute;
+  width: 142px;
+  height: 17px;
+  left: 119px;
+  top: 276px;
+  font-size: 16px;
+  color: #FD762A;
+}

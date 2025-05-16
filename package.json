@@ -1,0 +1,18 @@
+{
+  "name": "cluckoclock",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.cluckoclock.app",
+    "productName": "Cluck O'Clock",
+    "files": ["src/**/*", "assets/**/*"]
+  }
+}

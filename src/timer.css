@@ -1,0 +1,202 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+body {
+  background-color: #FFE979;
+  width: 420px;
+  height: 500px;
+  border: 5px solid #F8BA03;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header */
+.header-container {
+  position: absolute;
+  top: 15px;
+  left: 26px;
+  width: 368px;
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 26px;
+  color: #F47730;
+}
+
+/* Icon buttons 
+#minimise-icon,
+#close-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#minimise-icon img,
+#close-icon img {
+  width: 24px;
+  height: 24px;
+}*/
+#minimise-icon {
+  position: absolute;
+  top: 0;
+  right: 40px; /* move it slightly to the left of close */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#close-icon {
+  position: absolute;
+  top: 0;
+  right: 3px; /* push it to the far right */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#minimise-icon img,
+#close-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+
+
+/* Main Content Area */
+.content-container {
+  position: absolute;
+  top: 60px;
+  left: 26px;
+  width: 368px;
+  height: 411px;
+  border: 5px solid #F8BA03;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.background-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* "Your egg is ready in..." text */
+.line {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 21px;
+  color: #000;
+  z-index: 2;
+}
+
+/*.chick-animation {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    height: 250px;
+}*/
+
+.chick-animation {
+    position: absolute;
+    top: 40px;  /* <- move this up */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 250px;
+    z-index: 5;
+}
+
+
+.chick-animation img {
+    position: absolute;
+    object-fit: contain;
+    opacity: 0;
+    animation-name: rotate-images;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes rotate-images {
+  0%, 8%    { opacity: 0; }
+  12%, 25%  { opacity: 1; }
+  30%, 100% { opacity: 0; }
+}
+
+
+.chick-animation img:nth-child(1) {
+    animation-delay: 0s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+    opacity: 1; /* ensure at least one image shows */
+}
+.chick-animation img:nth-child(2) {
+    animation-delay: 1s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+.chick-animation img:nth-child(3) {
+    animation-delay: 2s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+.chick-animation img:nth-child(4) {
+    animation-delay: 3s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+
+.chick-animation img:nth-child(5) {
+    animation-delay: 4s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+.chick-animation img:nth-child(6) {
+    animation-delay: 5s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+.chick-animation img:nth-child(7) {
+    animation-delay: 6s;
+    width: 200px;
+    height: 250px;
+    left: 50px;
+}
+
+/* Timer */
+#timer-display {
+  position: absolute;
+  bottom: 6%;
+  width: 100%;
+  text-align: center;
+  font-size: 80px;
+  line-height: 96px;
+  color: #512B22;
+  z-index: 2;
+}

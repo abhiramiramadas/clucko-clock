@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'Pixelify Sans';
+  src: url('assets/fonts/PixelifySans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Pixelify Sans', sans-serif;
+  background-color: #FFE979;
+  text-align: center;
+  margin: 0;
+}
+
+.frame {
+  display: inline-flex;
+  padding: 14px 34px 38px 23px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  border: 1px solid #F8BA03;
+  background: #FFE979;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+#cluck-text {
+  width: 242px;
+  height: 28px;
+  flex-shrink: 0;
+  color: #F47730;
+  font-family: 'Pixelify Sans';
+  font-size: 35px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.header-spacer {
+  width: 255px; /* Enforces 255px gap */
+  flex-shrink: 0;
+}
+
+.shrink-close-icons {
+  display: flex;
+  gap: 5px;
+}
+
+.shrink-icon, .close-icon {
+  width: 96px;
+  height: 38px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+#main-content {
+  width: 580px;
+  height: 586px;
+  border: 5px solid #F8BA03;
+  background: url('assets/bg.png') no-repeat center;
+  background-size: cover;
+}
+
+#eggie-text {
+  width: 235px;
+  height: 92px;
+  flex-shrink: 0;
+  color: #000;
+  font-family: 'Pixelify Sans';
+  font-size: 42px;
+  font-weight: 400;
+  margin: 10px auto;
+}
+
+#start-button {
+  background: url('assets/startbutton.png') no-repeat center;
+  background-size: contain;
+  width: 100px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+#eggactly-text {
+  width: 180px;
+  height: 33px;
+  flex-shrink: 0;
+  color: #FD762A;
+  font-family: 'Pixelify Sans';
+  font-size: 22px;
+  font-weight: 400;
+  margin: 10px auto;
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  background-color: #FD762A;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#menu-button-soft {
+  background: url('assets/softboiled.png') no-repeat center;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+}
+
+#menu-button-hard {
+  background: url('assets/hardboiled.png') no-repeat center;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+}
+
+#menu-button-scrambled {
+  background: url('assets/scrambled.png') no-repeat center;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+}
+
+#menu-button-fried {
+  background: url('assets/friedegg.png') no-repeat center;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+}
+
+#timer {
+  font-size: 24px;
+  margin: 20px;
+}
+
+#egg-image {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+}

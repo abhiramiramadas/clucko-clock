@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Pixelify Sans', sans-serif;
+  background-color: #FFE979;
+  width: 420px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid #F8BA03;
+}
+
+/* Header container with title and icons */
+.header-container {
+  position: absolute;
+  top: 15px;
+  left: 26px;
+  width: 371px;
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 26px;
+  line-height: 31px;
+  color: #F47730;
+  width: 203px;
+}
+
+/* Minimize and Close Icons */
+/* Ensure both buttons are the same size and the images fit correctly */
+#minimise-icon,
+#close-icon {
+  position: absolute;
+  width: 24px; /* Set width */
+  height: 24px; /* Set height */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; /* Hide any overflowing parts of the image */
+}
+
+/* Style the image inside the button */
+#minimise-icon img,
+#close-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure the image fits within the button */
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+
+#minimise-icon {
+  left: 310px; /* Adjust this value to move it further right */
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  top: 0;
+}
+
+
+#close-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  left: 342px;
+  top: 0; 
+}
+
+/* Inner content area */
+.content-container {
+  position: absolute;
+  top: 60px;
+  left: 26px;
+  width: 368px;
+  height: 411px;
+  border: 5px solid #F8BA03;
+  overflow: hidden;
+}
+
+/* Optional background image */
+.background-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Prompt text */
+.line {
+  position: absolute;
+  top: 28px;
+  left: 35px;
+  font-size: 21px;
+  color: #000;
+}
+
+/* Egg grid */
+.eggs-container {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 20px;
+}
+
+/* Egg button and label */
+.egg-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 121px;
+}
+
+.egg-item button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.egg-item img {
+  width: 121px;
+  height: 121px;
+}
+
+.egg-item h1 {
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+  text-align: center;
+  margin-top: 5px;
+}
