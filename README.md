@@ -7,24 +7,32 @@ Tired of guessing when your eggs are perfectly cooked? Meet **Cluck o' Clock** �
 Featuring a cute **pixelated interface**, **animated art**, and **sound effects**, Cluck o’ Clock brings fun to your kitchen routine. it ensures your eggs are cooked *"eggactly"* right—every time.
 
 
-<br>
-Features
---------
-- 🍳 4 egg cooking modes:
-          - Soft Boiled (5 mins)
-          - Hard Boiled (10 mins)
-          - Fried Egg (3 mins)
-          - Scrambled (4 mins)
--  Fun sound effects
--  Adorable egg hatching animation
--  Retro pixel art design
--  Visual countdown timer
--  Completion notification
+
+## **Features**
+
+- **4 Egg Cooking Modes**:
+  - **Soft Boiled** – 5 minutes  
+  - **Hard Boiled** – 10 minutes  
+  - **Fried Egg** – 3 minutes  
+  - **Scrambled** – 4 minutes  
+-  sound effects  
+-  egg hatching animation  
+-  pixel art design  
+-  countdown timer  
+-  Completion notification  
+
 
 Screenshots
 -----------
 
-*Add a screenshot of the app here to showcase the interface.*
+![image](https://github.com/user-attachments/assets/513ca111-494f-47a0-beee-ad838aaffa63)
+![image](https://github.com/user-attachments/assets/bff48a46-5f8b-459c-afd0-2470b999a375)
+![image](https://github.com/user-attachments/assets/ce0e4a6f-2d41-4bb5-98fa-42be5b9658eb)
+![image](https://github.com/user-attachments/assets/26c2dee7-08e2-4afa-acad-6dbdb467fc9f)
+
+
+
+
 
 Prerequisites
 -------------
